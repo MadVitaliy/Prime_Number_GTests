@@ -39,6 +39,11 @@ public:
 			for (auto primeNumber : tempResult)
 				result.emplace_back(std::to_string(primeNumber));
 		}
+		else if constexpr (std::is_same<T, std::wstring>::value)
+		{
+			for (auto primeNumber : tempResult)
+				result.emplace_back(std::to_wstring(primeNumber));
+		}
 		return result;
 	}
 };

@@ -154,7 +154,7 @@ public:
 
 };
 
-typedef ::testing::Types<int, float, double, std::string> MyArithmeticTypes;
+typedef ::testing::Types<int, float, double, std::string, std::wstring> MyArithmeticTypes;
 
 TYPED_TEST_SUITE(PrimeNumberCalculatorParamTest, MyArithmeticTypes);
 
