@@ -97,8 +97,8 @@ TEST_F(PrimeNumberCalculatorTest, Has3559_When3572)
 template <class T>
 std::vector<T> CreateTestNumbers()
 {
-	std::vector<T> primeTestNumbers = { 2,	3,	5,	7,	11,	13,	17,	19,	23,	29,	31,	37,	41,	43,	47,	53,
-	59,	61,	67,	71, 73,	79,	83, 89,	97,	101, 103, 107, 109,	113, 127, 131, 137, 139, 149, 151, 157, 163,
+	std::vector<T> primeTestNumbers = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+	59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109,113, 127, 131, 137, 139, 149, 151, 157, 163,
 	167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277,
 	281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409 };
 	return primeTestNumbers;
@@ -205,66 +205,3 @@ TYPED_TEST(PrimeNumberCalculatorParamTest, Has409_When420)
 	const auto result = calc.GetPrimeNumbers(420);
 	EXPECT_THAT(result, ::testing::Contains(primeTestNumbers[79])); //primeTestNumbers[79] = 409
 }
-
-
-
-
-
-/*
-
-typedef ::testing::Types<std::string> MyStringTypes;
-
-TYPED_TEST_SUITE(PrimeNumberCalculatorParamTest, MyStringTypes);
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, ReturnsEmptyRezult_When0)
-{
-	//setup
-	//in fixture
-	//act
-	const auto result = calc.GetPrimeNumbers(0);
-	//assert
-	EXPECT_TRUE(result.empty());
-}
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, ReturnsEmptyRezult_When1)
-{
-	const auto result = calc.GetPrimeNumbers(1);
-	EXPECT_TRUE(result.empty());
-}
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, Returns2_When2)
-{
-	const auto result = calc.GetPrimeNumbers(2);
-	ASSERT_EQ(result.size(), 1);
-	EXPECT_EQ(result[0], 2);
-}
-
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, ReturnsFirst20PrimeNumbers_When71)
-{
-	const auto result = calc.GetPrimeNumbers(71);
-	ASSERT_EQ(result.size(), 20);
-	for (size_t i = 0; i < 20; i++)
-	{
-		EXPECT_EQ(result[i], primeTestNumbers[i]) << "Failed on " << i
-			<< "; Expected: " << primeTestNumbers[i] << ", but get " << result[i];
-	}
-}
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, ReturnsFirst20PrimeNumbers_When72)
-{
-	const auto result = calc.GetPrimeNumbers(71);
-	ASSERT_EQ(result.size(), 20);
-	for (size_t i = 0; i < 20; i++)
-	{
-		EXPECT_EQ(result[i], primeTestNumbers[i]);
-	}
-}
-
-TYPED_TEST(PrimeNumberCalculatorParamTest, Has3559_When3572)
-{
-	const auto result = calc.GetPrimeNumbers(3572);
-	EXPECT_THAT(result, ::testing::Contains(3559));
-}
-
-*/
